@@ -13,7 +13,7 @@ SMTP / Mail access Cracker ☣ Scanner & check & send to email
 
 
 <h2>Video</h2>
-<a href="https://www.youtube.com/watch?v=EgqTsrWt2VU"><img src="https://i.imgur.com/5B96biH.png" style="max-width:100%;"></a>
+<a href="https://www.youtube.com/watch?v=EgqTsrWt2VU"><fontcolor='red'>Click Here </font></a>
 
 <h2>📧 Contact</h2>
 <li>You Want Ask About All My Tools Or Buy Tools Private Add Me On Facebook : fb.com/amir.othman.official</li>
