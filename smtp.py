@@ -467,7 +467,7 @@ except:
         sys.stdout.flush()
         time.sleep(0.02)
  vers=requests.get('https://gist.githubusercontent.com/aron-tn/edecab7db5849e16fc9c77ad14eba0b3/raw/aaec54e2fa507c3afde04e2551cb639e3aaa7c03/gistfile1.txt').text.encode('utf-8')
- if vers=='ARON-TN@2.1@ARON-TN':
+ if vers=='ARON-TN@2.0@ARON-TN':
   print('\033[91m{\033[94m>\033[91m} \033[91mG\033[94mo\033[92mo\033[91md \033[94mY\033[92mo\033[91mu\033[94m H\033[92ma\033[92mv\033[91me\033[94m L\033[92ma\033[91ms\033[94mt\033[92m V\033[91me\033[94mr\033[92ms\033[91mi\033[94mo\033[92mn\033[91m \n')
  else:
   print("\033[91mThere IS NEW Update\033[94m :\ \033[92mDo you Want To Download it ? \033[00m")
