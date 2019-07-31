@@ -416,7 +416,7 @@ background: -o-linear-gradient(green,#F3431D,green);
 <b>  Host : '''+host+'''</b><br/><b> Port : '''+port+'''<br>
   User  : '''+user+'''<br>
   Password  : '''+passw+'''<br><br><font color="blue"> /!\ WARNING /!\ <br> i don't accept any responsibility for any illegal usage !</font><br><br>
-  Contact Coder(ARON-TN)  <br>  Email : aron.tn.official@gmail.com<br>  Facebook : <a href="https://www.facebook.com/amir.othman.official">Click HEre</a><br>
+  Contact Coder(ARON-TN)  <br>  Email : aron.tn.official@gmail.com<br>
   Youtube : <a href="https://www.youtube.com/channel/UCuk4DSWDGxdZnHbrqVz0ZZA">Click HEre</a><br><font>© ARON-TN 2017-2019</font></b></body></html>'''
 			s.send(headers)
 			rez=s.recv(1000)
@@ -433,7 +433,7 @@ background: -o-linear-gradient(green,#F3431D,green);
 			self.q.task_done()
 quee=Queue.Queue(maxsize=20000)
 try:
- save=open('about.txt','a').write('+++++++++++++\nCoded By ARON-TN \n contact me ! \n{!}facebook : https://www.facebook.com/amir.othman.official \n{!}youtube : https://www.youtube.com/channel/UCuk4DSWDGxdZnHbrqVz0ZZA \nCopyright ARON-TN 2k19\n+++++++++++++\n')
+ save=open('about.txt','a').write('+++++++++++++\nCoded By ARON-TN \n contact me ! \n{!}youtube : https://www.youtube.com/channel/UCuk4DSWDGxdZnHbrqVz0ZZA \nCopyright ARON-TN 2k19\n+++++++++++++\n')
  tld=open('about.txt','r').read().splitlines()
 except:
  sys.exit("\033[91m{!} about.txt not Founded :/ \n Please Create file.txt rename it to about.txt \n thnx For Using My Tool <3\033[00m")
