@@ -48,7 +48,7 @@ except:
   else:
     os.system('pip2 install requests')
 try:
- import requests
+ import colorama
 except:
   print"\033[91m[\033[92m?\033[91m] Installing colorama Module\033[00m"
   if os.name=='nt':
