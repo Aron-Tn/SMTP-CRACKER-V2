@@ -22,8 +22,8 @@ print """
 
 ```
 1) Install Python From https://www.python.org/downloads/ (Python 2.7)
-5) Go To https://github.com/aron-tn/SMTP-Mail.acess-Cracker-Checker And Download In ".zip" Format
-6) Extract SMTP-Mail.acess-Cracker-Chec-master.zip 
+5) Go To https://github.com/aron-tn/Smtp-cracker And Download In ".zip" Format
+6) Extract Smtp-cracker-master.zip 
 4) Just Click In v2.py
   Ps : Go To Youtube And See How To run Python 2.7
 ```
