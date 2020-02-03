@@ -24,7 +24,7 @@ print """
 1) Install Python From https://www.python.org/downloads/ (Python 2.7)
 5) Go To https://github.com/aron-tn/Smtp-cracker And Download In ".zip" Format
 6) Extract Smtp-cracker-master.zip 
-4) Just Click In v2.py
+4) Just Click In smtp.py
   Ps : Go To Youtube And See How To run Python 2.7
 ```
 
@@ -34,7 +34,7 @@ print """
 * Contact Me Bro  ;VVV
 ```
 *    Facebook : <a href="https://www.facebook.com/Aron.Tn/" target="_blank">Official Page !!</a>
-*    th3Cod3r : <a href="mailto:Mr_Aron@protonmail.ch">Mr_Aron@protonmail.ch</a>
+*    th3Cod3r : <a href="mailto:aron.tn.official@gmail.com">aron.tn.official@gmail.com</a>
 
 <br>©2019 Aron-Tn
 
