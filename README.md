@@ -15,16 +15,13 @@ print """
 
 **First Step**
 ----------
-*Click here and Subscribe 2 <a href="https://www.youtube.com/AronTnXofficial">ARON-TN</a> ..enjoy ^_^*
+*Click <a href="https://www.youtube.com/AronTnXofficial">here</a> and Subscribe 2 <a href="https://www.youtube.com/AronTnXofficial">ARON-TN</a> ..enjoy ^_^*
 
-**How To Use ?**
+**Requirement**
 ----------
 
 ```
-1) Install Python From https://www.python.org/downloads/ (Python 2.7)
-5) Go To https://github.com/aron-tn/Smtp-cracker And Download In ".zip" Format
-6) Extract Smtp-cracker-master.zip 
-4) Just Click In smtp.py
+Just install Python 2.7 From <a href="https://www.python.org/downloads/release/python-2718/">Here</a>
   Ps : Go To Youtube And See How To run Python 2.7
 ```
 
