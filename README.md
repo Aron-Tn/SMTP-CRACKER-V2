@@ -21,7 +21,7 @@ print """
 ----------
 
 ```
-*Just install Python 2.7 From <a href="https://www.python.org/downloads/release/python-2718/">Here</a>
+*Just install Python 2.7 From https://www.python.org/downloads/release/python-2718/
   Ps : Go To Youtube And See How To run Python 2.7
 ```
 
