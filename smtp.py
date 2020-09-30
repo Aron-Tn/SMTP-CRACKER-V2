@@ -464,7 +464,7 @@ def part():
 	for i in tld:
 		tlds[i]=i
 part()
-msg ="\n\033[91mConnecting ..........."
+msg ="\n\033[91mConnecting Ke Server ..........."
 for i in msg:
         sys.stdout.write(i)
         sys.stdout.flush()
