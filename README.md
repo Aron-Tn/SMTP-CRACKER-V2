@@ -1,5 +1,5 @@
 
-#   Simple Mail Transfer Protocol ( SMTP ) CHECKER - CRACKER Tool
+#   Simple Mail Transfer Protocol ( SMTP ) CHECKER - CRACKER Tool V2
 
 
 **Requirement**
