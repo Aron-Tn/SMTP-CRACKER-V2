@@ -22,7 +22,7 @@ print """
   Ps : Go To Youtube And See How To run Python 2.7
 ```
 <h2>Video</h2>
-<a href="https://www.youtube.com/watch?v=EgqTsrWt2VU"><img src="https://i.imgur.com/MelftkZ.png" style="max-width:100%;"></a>
+<img src="https://i.imgur.com/MelftkZ.png" style="max-width:100%;">
 
 
 <hr>
